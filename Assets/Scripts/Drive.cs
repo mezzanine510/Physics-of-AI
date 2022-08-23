@@ -6,7 +6,10 @@ public class Drive : MonoBehaviour
 {
     public float speed = 1.0f;
     public float rotationSpeed = 100.0f;
+    public float turrentPivotSpeed = 10.0f;
     public Transform transGun;
+    public Transform gun;
+    public GameObject bullet;
 
     void Update()
     {
@@ -26,14 +29,19 @@ public class Drive : MonoBehaviour
 
         // Rotate around our y-axis
         transform.Rotate(0, rotation, 0);
-
+        
         if (Input.GetKey(KeyCode.T))
         {
-            transGun.RotateAround(transGun.position, transGun.right, -2);
+            transGun.RotateAround(transGun.position, transGun.right, -turrentPivotSpeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.G))
         {
-            transGun.RotateAround(transGun.position, transGun.right, 2);
+            transGun.RotateAround(transGun.position, transGun.right, turrentPivotSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Instantiate(bullet, gun.position, gun.rotation);
         }
     }
 }
