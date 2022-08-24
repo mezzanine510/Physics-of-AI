@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &301806100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+  m_PrefabInstance: {fileID: 1354003426666338538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &301806103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301806100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7, y: 1.93, z: 2.51}
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &620903246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1043457633746962670, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
@@ -463,7 +481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608320671}
   m_LocalRotation: {x: -0.1399626, y: -0, z: -0.000000014901159, w: 0.9901568}
-  m_LocalPosition: {x: -0, y: 0.506, z: 1.034}
+  m_LocalPosition: {x: -0, y: 0.62, z: 1.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -478,9 +496,41 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1277900698, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277900698, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277900698, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9913375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277900698, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.13133915
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277900698, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277900698, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000014901158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277900698, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -15.094
+      objectReference: {fileID: 0}
     - target: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
       propertyPath: m_Name
       value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+      propertyPath: m_TagString
+      value: tank
       objectReference: {fileID: 0}
     - target: {fileID: 2887154942990734001, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
       propertyPath: m_RootOrder

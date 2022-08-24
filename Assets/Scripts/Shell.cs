@@ -5,6 +5,22 @@ using UnityEngine;
 public class Shell : MonoBehaviour
 {
     public GameObject explosion;
+    public float speed = 3.0f;
+    float mass = 10f;
+    float force = 1000f;
+    float acceleration;
+
+    void Start()
+    {
+
+    }
+
+    void LateUpdate()
+    {
+        acceleration = force / mass;
+        speed += acceleration * Time.deltaTime;
+        this.transform.Translate(0, 0, Time.deltaTime * speed);
+    }
 
     void OnCollisionEnter(Collision col)
     {
@@ -16,15 +32,4 @@ public class Shell : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void LateUpdate()
-    {
-
-    }
 }

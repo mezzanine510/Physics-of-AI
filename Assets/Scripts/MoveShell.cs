@@ -8,10 +8,10 @@ public class MoveShell : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
-    void Update()
+    void LateUpdate()
     {
         this.transform.Translate(0, 0, Time.deltaTime * speed);
     }
