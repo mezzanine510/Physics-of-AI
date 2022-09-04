@@ -5,49 +5,18 @@ public class FireShell : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject turret;
     [SerializeField] GameObject enemy;
-    
+    private float rotSpeed = 2f;
+
     void Update()
     {
+        Vector3 direction = (enemy.transform.position - this.transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, lookRotation, Time.deltaTime * rotSpeed);
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3 aimAt = CalculateTrajectory();
-            if (aimAt != Vector3.zero)
-            {
-                this.transform.forward = aimAt;
-            }
-
             CreateBullet();
         }
-    }
-
-    private Vector3 CalculateTrajectory()
-    {
-        Vector3 position = enemy.transform.position - this.transform.position;
-        Vector3 velocity = enemy.transform.forward * enemy.GetComponent<Drive>().speed;
-        float bulletSpeed = bullet.GetComponent<MoveShell>().speed;
-
-        float a = Vector3.Dot(velocity, velocity) - (bulletSpeed * bulletSpeed);
-        float b = Vector3.Dot(position, velocity);
-        float c = Vector3.Dot(position, position);
-        float d = (b * b) - (a * c);
-
-        if (d < 0.1f) return Vector3.zero;
-
-        float sqrt = Mathf.Sqrt(d);
-        float t1 = (-b - sqrt) / c;
-        float t2 = (-b + sqrt) / c;
-
-        float t = 0;
-
-        if (t1 < 0 && t2 < 0) return Vector3.zero;
-        else if (t1 < 0) t = t2;
-        else if (t2 < 0) t = t1;
-        else
-        {
-            t = Mathf.Max(new float[] { t1, t2 });
-        }
-
-        return t * position + velocity;
     }
 
     void CreateBullet()
